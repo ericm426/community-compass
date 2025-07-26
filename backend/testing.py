@@ -1,10 +1,3 @@
-from flask import Flask, jsonify, request
-from flask_cors import CORS
-import os 
-
-app = Flask(__name__)
-CORS(app)
-
 SAMPLE_RESOURCES = [
     {
         "id": 1,
@@ -83,13 +76,5 @@ SAMPLE_RESOURCES = [
     }
 ]
 
-@app.route('/')
-def home():
-    return "Community Compass is Running!"
-
-@app.route('/api/resources', methods=['GET'])
-def get_resources():
-    return jsonify(SAMPLE_RESOURCES)
-
-if __name__ == '__main__':
-    app.run(debug=True, host='127.0.0.1', port=5000) 
+for i in range(len(SAMPLE_RESOURCES)):
+    print(SAMPLE_RESOURCES[i])
