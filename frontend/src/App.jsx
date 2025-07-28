@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import { useState, useEffect } from 'react'
-import Home from "./Home"
-import About from "./About"
+import Home from "./pages/Home"
+import About from "./pages/About"
 
 function App() {
   const [data, setData] = useState(null)
@@ -14,14 +14,14 @@ function App() {
   }, [])
 
   return (
-    <BrowserRouter>
+    <Router>
       <div className="app">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/About" element={<About />} />
         </Routes>
       </div>
-    </BrowserRouter>
+    </Router>
     /* <div>
       <h1>Community Compass</h1>
       {data ? (
