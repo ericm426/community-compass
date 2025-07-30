@@ -1,7 +1,10 @@
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, BrowserRouter} from 'react-router-dom'
 import { useState, useEffect } from 'react'
 import Home from "./pages/Home"
 import About from "./pages/About"
+import Volunteer from "./pages/Volunteer"
+import Resources from "./pages/Resources"
+import Contact from "./pages/Contact"
 
 function App() {
   const [data, setData] = useState(null)
@@ -14,14 +17,17 @@ function App() {
   }, [])
 
   return (
-    <Router>
+    <BrowserRouter>
       <div className="app">
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/About" element={<About />} />
+          <Route path="/" element={<Home/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/volunteer" element={<Volunteer/>}/>
+          <Route path="/resources" element={<Resources/>}/>
+          <Route path="/contact" element={<Contact/>}/>
         </Routes>
       </div>
-    </Router>
+    </BrowserRouter>
     /* <div>
       <h1>Community Compass</h1>
       {data ? (
